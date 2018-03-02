@@ -21,7 +21,7 @@ Tema 8. Requisitos hardware y software en servidores web
 
 ## Prácticas
 
-[Práctica 1. Preparación de las herramientas.](https://github.com/Thejokeri/SWAP-2017-2018/tree/master/Prácticas/P1)
+[Práctica 1. Preparación de las herramientas.](https://github.com/Thejokeri/SWAP-2017-2018/tree/master/Prácticas/P1/p1.md)
 
 Práctica 2. Clonar la información entre servidores.
 
