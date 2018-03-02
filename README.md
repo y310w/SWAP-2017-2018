@@ -39,8 +39,8 @@ Detección de Intrusos
 
 #### Grupo
 
-Leando Vega Palma
-Carlos Ariza García 
-Fernando Talavera Mendoza
+- Leando Vega Palma
+- Carlos Ariza García 
+- Fernando Talavera Mendoza
 
 - - -
