@@ -3,7 +3,7 @@ Proyecto de SWAP (UGR)
 
 ## Ejercicios
 
-Tema 2. Alta disponibilidad y escalabilidad.
+[Tema 2. Alta disponibilidad y escalabilidad.]((https://github.com/Thejokeri/SWAP-2017-2018/tree/master/Ejercicios/Tema+2/)
 
 Tema 3. La red de una granja web.
 
