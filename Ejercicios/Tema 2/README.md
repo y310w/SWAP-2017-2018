@@ -35,7 +35,7 @@ Para calcular la nueva tabla que nos piden utilizaremos la siguiente ecuación:
 
     As = ACn-1 + ((1 - ACn-1) * ACn)
 
-Donde: 
+Dónde: 
 - As: el nuevo porcentaje al añadir un nuevo componente 
 - ACn-1: la disponibilidad del anterior
 - ACn: la disponibilidad inicial
@@ -54,7 +54,7 @@ Donde:
 | Data Center | 99.99 %      |
 | ISP         | 99.9875 %    |
 
-La disponibilidad es: 99.6625 % * 99.9 % *      99.9999999 % * 99.9992 % * 99.6625 % * 99.9999 % * 99.99 % * 99.9875 % =  99.2035 %  
+La disponibilidad es: 99.6625 % * 99.9 % * 99.9999999 % * 99.9992 % * 99.6625 % * 99.9999 % * 99.99 % * 99.9875 % =  99.2035 %  
 
 - - -
 
@@ -84,9 +84,9 @@ Todo estos son profilers para monitorizar nuestro servidor (Hardware, software, 
 
 Herramientas internas de Linux:
 - Top: muestra con una interfaz toda la ejecución de los procesos y se puede manejar de forma interactiva.    
-- HTop: es igual que top pero muestra una barra de porcentaje del uso de cpu (cada núcleo), memoria y swapping.
+- HTop: es igual que top pero muestra una barra de porcentaje del uso de cpu (de cada núcleo), memoria y swapping.
 - ps: muestra de forma reducida y escasa, la información de procesos.
-- uptime: muestra cuanto tiempo lleva la máquina en ejecución, además podemos ver si hay variaciones en la carga.
+- uptime: muestra cuánto tiempo lleva la máquina en ejecución, además podemos ver si hay variaciones en la carga.
 
 - - - 
 
