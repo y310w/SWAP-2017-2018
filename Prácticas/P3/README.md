@@ -68,7 +68,7 @@ En esta práctica se llevarán a cabo, como mínimo, las siguientes tareas:
 
 2. **Configurar una máquina e instalar el haproxy como balanceador de carga**  
 
-  Parte 2  
+   
 
 3. **Someter a la granja web a una alta carga, generada con la herramienta Apache Benchmark, teniendo primero nginx y después haproxy.**  
 
@@ -84,6 +84,11 @@ En esta práctica se llevarán a cabo, como mínimo, las siguientes tareas:
   ![Captura BenchHaproxy](./imagenes/CapturaBenchmarkHaproxy.PNG)  
 
   Comparando los resultados podemos observar que el balanceador HaProxy obtiene mejores resultados en tiempo que Nginx.
+
+### Ejercicio adicional
+
+4. **Configuración de Pound en el balanceador**
+
 
   - - -
   # Grupo
