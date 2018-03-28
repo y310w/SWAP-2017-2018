@@ -17,46 +17,46 @@ En esta práctica se llevarán a cabo, como mínimo, las siguientes tareas:
 
   Actualizamos el sistema:
   ```
-  sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get
-  autoremove
+    sudo apt-get update && sudo apt-get dist-upgrade && sudo apt-get autoremove
   ```
   Instalamos e iniciamos nginx:
   ```
-  sudo apt-get install nginx
-  sudo systemctl start nginx
+    sudo apt-get install nginx
+    sudo systemctl start nginx
   ```  
   Modificamos el fichero de configuración de nginx (/etc/nginx/conf.d/default.conf):
 
-  ```
+  ```script
   upstream apaches {
-  server 172.16.168.130;
-  server 172.16.168.131;
+    server 172.16.168.130;
+    server 172.16.168.131;
   }
   server{
-  listen 80;
-  server_name balanceador;
-  access_log /var/log/nginx/balanceador.access.log;
-  error_log /var/log/nginx/balanceador.error.log;
-  root /var/www/;
-  location /
-  {
-  proxy_pass http://apaches;
-  proxy_set_header Host $host;
-  proxy_set_header X-Real-IP $remote_addr;
-  proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-  proxy_http_version 1.1;
-  proxy_set_header Connection "";
-  }
+    listen 80;
+    server_name balanceador;
+    access_log /var/log/nginx/balanceador.access.log;
+    error_log /var/log/nginx/balanceador.error.log;
+    root /var/www/;
+    location /
+    {
+        proxy_pass http://apaches;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_http_version 1.1;
+        proxy_set_header Connection "";
+    }
   }
   ```  
+
   Iniciamos nginx:  
   ```
-  sudo systemctl start nginx
+    sudo systemctl start nginx
   ```  
   Comprobamos que el balanceo de carga funciona con el comando cURL:  
   ```
-  curl http://127.0.0.1
-  curl http://127.0.0.1
+    curl http://127.0.0.1
+    curl http://127.0.0.1
   ```
   Al lanzar este comando nos muestra el index de una máquina seguido del index de la siguiente página, por lo que el balanceo esta funcionando:  
 
@@ -74,7 +74,7 @@ En esta práctica se llevarán a cabo, como mínimo, las siguientes tareas:
 
   Sometemos a la granja web, primero con el balanceador Nginx, a una carga simulada con Apache Benchmark, obteniendo estos resultados:   
   ```
-  ab -n 1000 -c 10 http://192.168.56.10/index.html
+    ab -n 1000 -c 10 http://IP/index.html
   ```
 
   ![Captura BenchNginx](./imagenes/CapturaBenchmarkNginx.PNG)  
@@ -88,6 +88,6 @@ En esta práctica se llevarán a cabo, como mínimo, las siguientes tareas:
   - - -
   # Grupo
 
-  | [![Fernando Talavera Mendoza](https://github.com/Thejokeri.png?size=100)](https://github.com/Thejokeri) | [![Carlos Ariza García](https://github.com/AGCarlos.png?size=100)](https://github.com/AGCarlos) |
-  | :---: | :---: |
-  | [Fernando Talavera Mendoza](https://github.com/Thejokeri) | [Carlos Ariza García](https://github.com/AGCarlos) |
+  | [![Carlos Ariza García](https://github.com/AGCarlos.png?size=100)](https://github.com/AGCarlos) | [![Fernando Talavera Mendoza](https://github.com/Thejokeri.png?size=100)](https://github.com/Thejokeri) |
+| :---: | :---: |
+| [Carlos Ariza García](https://github.com/AGCarlos) | [Fernando Talavera Mendoza](https://github.com/Thejokeri) |
