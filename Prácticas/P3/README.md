@@ -68,7 +68,39 @@ En esta práctica se llevarán a cabo, como mínimo, las siguientes tareas:
 
 2. **Configurar una máquina e instalar el haproxy como balanceador de carga**  
 
-   
+  En primer lugar, instalamos haproxy en nuestra máquina balanceadora:
+
+   ```
+    apt-get install haproxy
+   ```
+  Una vez instalado, configuramos el archivo `/etc/haproxy/haproxy.cfg` añadiendo lo siguiente:
+
+  ```script
+  global
+    daemon
+    maxconn 256
+  defaults
+    mode http
+    contimeout 4000
+    clitimeout 42000
+    srvtimeout 43000
+  frontend http-in
+    bind *:80
+    default_backend servers
+  backend servers
+    server m1 ip_maquina1:80 maxconn 32
+    server m2 ip_maquina2:80 maxconn 32
+  ```
+  Una configurado el haproxy, lanzamos el haproxy mediante el comando: 
+
+  ```
+    sudo /usr/sbin/haproxy -f /etc/haproxy/haproxy.cfg
+  ```
+  (Aparecen warnings por algunas líneas por que están obsoletas).
+
+Probamos el balanceador:
+
+![Captura Haproxy](./imagenes/CapturaHaproxy.png)
 
 3. **Someter a la granja web a una alta carga, generada con la herramienta Apache Benchmark, teniendo primero nginx y después haproxy.**  
 
@@ -89,6 +121,11 @@ En esta práctica se llevarán a cabo, como mínimo, las siguientes tareas:
 
 4. **Configuración de Pound en el balanceador**
 
+  Instalamos Pound:
+
+  ```
+    apt-get install pound
+  ```
 
   - - -
   # Grupo
