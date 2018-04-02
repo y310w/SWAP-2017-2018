@@ -127,6 +127,38 @@ Probamos el balanceador:
     apt-get install pound
   ```
 
+  Modificamos el archivo `/etc/pound/pound.cfg` añadiendo lo siguiente:
+
+  ```script
+    ListenHTTP
+	    Address IP_balance
+	    Port	80
+
+	    ## allow PUT and DELETE also (by default only GET, POST and HEAD)?:
+	    xHTTP		0
+
+	  Service
+		  BackEnd
+			  Address	ip_maquina1
+			  Port	80
+		  End
+		  BackEnd
+			  Address ip_maquina2
+			  Port	80
+		  End
+	  End
+  End
+  ```
+
+  Introducimos el siguiente comando:
+
+  ```
+    sed -i -e "s/^startup=0/startup=1/" /etc/default/pound
+  ```
+
+  Y lo probamos:
+
+  ![Captura Pound](./imagenes/CapturaPound.png)
   - - -
   # Grupo
 
