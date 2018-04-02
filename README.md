@@ -27,7 +27,7 @@ Tema 8. Requisitos hardware y software en servidores web
 
 [Práctica 3. Balanceo de carga y rendimiento de una granja web.](https://github.com/Thejokeri/SWAP-2017-2018/tree/master/Prácticas/P3)
 
-Práctica 4. Asegurar la granja web.
+[Práctica 4. Asegurar la granja web.](https://github.com/Thejokeri/SWAP-2017-2018/tree/master/Prácticas/P4)
 
 Práctica 5. Gestión de la base de datos del sistema web.
 
