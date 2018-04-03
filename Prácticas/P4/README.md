@@ -55,15 +55,29 @@ Ahora podemos comprobar con:
   curl -k https://ipmaquina/index.html
 ```
 
-Realizando peticiones HTTPS. Todo estos pasos la hemos elaborado en las tres máquinas.
+![Captura de la máquina 1](./imagenes/Capturam1.png)
 
-![Capturas balanceador]()
+Repetimos todo esto en las restantes máquinas. Para configurar el nginx me he seguido de este [tutorial](https://carlosazaustre.es/como-instalar-un-servidor-https-en-nginx-desde-cero/).
+
+Añadimos las siguientes líneas en el archivo de configuración `/etc/nginx/conf.d/default.conf`:
+
+```script
+  listen 443;
+
+  ssl on;
+  ssl_certificate /etc/apache2/ssl/apache.crt;
+  ssl_certificate_key /etc/apache2/ssl/apache.key;
+```
+
+Reiniciamos el servicio y comprobamos con curl:
+
+![Capturas balanceador](./imagenes/CapturaBalanceador.png)
 
 2. Configurar las reglas del cortafuegos con IPTABLES para asegurar el acceso a uno de los servidores web, permitiendo el acceso por los puertos de HTTP y HTTPS a dicho servidor. Esta configuración se hará en una de las máquinas servidoras finales (p.ej. en la máquina 1), y se debe poner en un script con las reglas del cortafuegos que se ejecute en el arranque del sistema (según la versión de Linux, se llevará a cabo de una forma u otra).
 
-Adicionalmente, y como primera tarea opcional para conseguir una mayor nota en esta práctica, se propone realizar la instalación de un certificado del proyecto Certbot en lugar de uno autofirmado. Es importante tener en cuenta que para obtener este tipo de certificado, es necesario disponer de un dominio real con IP pública (no se puede hacer en máquinas virtuales).
+3. Adicionalmente, y como primera tarea opcional para conseguir una mayor nota en esta práctica, se propone realizar la instalación de un certificado del proyecto Certbot en lugar de uno autofirmado. Es importante tener en cuenta que para obtener este tipo de certificado, es necesario disponer de un dominio real con IP pública (no se puede hacer en máquinas virtuales).
 
-Como segunda tarea opcional para conseguir una  mayor nota en esta práctica, se propone realizar la configuración del cortafuegos en una cuarta máquina (M4) que se situará delante del balanceador. Esa M4 sólo tendrá configuradas las iptables, para hacer el filtrado y posterior reencaminamiento del tráfico hacia el balanceador. En esta configuración más compleja sólo a esa M4-cortafuegos se le hará la configuración de iptables (el resto de máquinas de la granja tendrá la configuración por defecto, aceptando todo el tráfico como política por defecto.
+4. Como segunda tarea opcional para conseguir una  mayor nota en esta práctica, se propone realizar la configuración del cortafuegos en una cuarta máquina (M4) que se situará delante del balanceador. Esa M4 sólo tendrá configuradas las iptables, para hacer el filtrado y posterior reencaminamiento del tráfico hacia el balanceador. En esta configuración más compleja sólo a esa M4-cortafuegos se le hará la configuración de iptables (el resto de máquinas de la granja tendrá la configuración por defecto, aceptando todo el tráfico como política por defecto.
 
 - - -
 
