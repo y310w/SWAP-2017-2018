@@ -1,4 +1,5 @@
 # SWAP-2017-2018
+
 Proyecto de SWAP (UGR)
 
 ## Ejercicios
@@ -9,13 +10,13 @@ Proyecto de SWAP (UGR)
 
 [Tema 4. Balanceo de carga.](https://github.com/Thejokeri/SWAP-2017-2018/tree/master/Ejercicios/Tema%204)
 
-Tema 5. Medir prestaciones
+Tema 5. Medir prestaciones.
 
-Tema 6. Asegurar el sistema web
+Tema 6. Asegurar el sistema web.
 
-Tema 7. Almacenamiento de datos
+Tema 7. Almacenamiento de datos.
 
-Tema 8. Requisitos hardware y software en servidores web
+Tema 8. Requisitos hardware y software en servidores web.
 
 - - -
 
@@ -29,18 +30,16 @@ Tema 8. Requisitos hardware y software en servidores web
 
 [Práctica 4. Asegurar la granja web.](https://github.com/Thejokeri/SWAP-2017-2018/tree/master/Prácticas/P4)
 
-Práctica 5. Gestión de la base de datos del sistema web.
+[Práctica 5. Gestión de la base de datos del sistema web.](https://github.com/Thejokeri/SWAP-2017-2018/tree/master/Prácticas/P5)
 
-- - - 
+- - -
 
 ## Trabajo
 
 [Detección de Intrusos](https://www.google.es/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0ahUKEwiV1OaAmezZAhVEbhQKHeuXBx0QyCkIKzAA&url=https%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DdQw4w9WgXcQ&usg=AOvVaw0aHtehaphMhOCAkCydRLZU)
 
-#### Grupo
+### Grupo
 
-- Leando Vega Palma
-- Carlos Ariza García 
-- Fernando Talavera Mendoza
-
-- - -
+- Leando Vega Palma.
+- Carlos Ariza García.
+- Fernando Talavera Mendoza.
