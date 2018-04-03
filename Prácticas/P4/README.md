@@ -106,6 +106,7 @@ iptables -A OUTPUT -o lo -j ACCEPT
 iptables -A INPUT -i enp0s8 -p tcp -m multiport --dports 22,80,443 -m state --state NEW,ESTABLISHED -j ACCEPT
 iptables -A OUTPUT -o enp0s8 -p tcp -m multiport --sports 22,80,443 -m state --state ESTABLISHED -j ACCEPT
 ```
+
 Una vez creado el script procedemos a cargar el script en el arranque del sistema. Para ello, añadimos un servicio en `/etc/systemd/system/`en mi caso `iptablesconfig.service` con estos permisos `-rwxr-xr-x`.
 
 En el servicio añadimos lo siguiente:
