@@ -1,4 +1,5 @@
 # Práctica 1. Preparación de las herramientas
+
 ## Cuestiones a resolver
 
 En esta práctica el objetivo es configurar las máquinas virtuales para trabajar en prácticas posteriores, asegurando la conectividad entre dichas máquinas.
@@ -15,7 +16,7 @@ El resultado de ejecutar estas tareas se debe documentar usando un archivo de te
 
 ## Desarrollo
 
-Para la elaboración de la práctica, hemos instalado una máquina con Ubuntu Server, utilizando [VirtualBox](https://www.virtualbox.org). 
+Para la elaboración de la práctica, hemos instalado una máquina con Ubuntu Server, utilizando [VirtualBox](https://www.virtualbox.org).
 
 Debemos de realizar instalación completa de servidor web: Apache + MySQL + PHP (LAMP) siguiendo estos [pasos](http://www.ubuntugeek.com/step-by-step-ubuntu-12-04-precise-lamp-server-setup.html).
 
@@ -29,42 +30,44 @@ Tras la instalación debemos configurar una nueva interfaz de red (HostOnly) par
 
 1. Modificar el archivo alojado `/etc/network/interfaces` añadiendo estas líneas:
 
-```
+```script
     auto enp0s8
     iface enp0s8 inet static
     address IPserver
-    netmask 255.255.255.0 
+    netmask 255.255.255.0
 ```
 
 Las direcciones IPs, de ambas máquinas, deben ser diferentes.
 
 2. Reiniciamos la red para aplicar los cambios:
-```
-    etc/init.d/networking restart 
+
+```bash
+    etc/init.d/networking restart
 ```
 
 3. Comprobamos la conexión:
-```
-    ping IPserver 
+
+```bash
+    ping IPserver
 ```
 
 Para poder conectarnos a las máquinas vistuales vamos a realizarlo con ssh.
 
 1. Generamos la llave pública y privada:
 
-```
-    ssh-keygen 
+```bash
+    ssh-keygen
 ```
 
-2. Modificamos el archivo ` /etc/ssh/sshd_config` para permitir el acceso a root:
+2. Modificamos el archivo `/etc/ssh/sshd_config` para permitir el acceso a root:
 
-```
+```script
     PermitRootLogin yes
 ```
 
 3. Compartimos la llave pública con la otra máquina:
 
-```
+```bash
     ssh-copy-id root@IPserver
 ```
 
@@ -72,7 +75,7 @@ Con esto nos evitamos escribir la contraseña cada vez que establecemos una cone
 
 4. Accedemos a la otra máquina:
 
-```
+```bash
     ssh root@IPserver
 ```
 
@@ -82,32 +85,33 @@ En nuestro caso, hemos realizado estos pasos en la máquina anfitriona para cone
 
 ## Cuestiones a resolver
 
-1. Acceder por ssh de una máquina a otra  
+1. Acceder por ssh de una máquina a otra
 
-```
+```bash
     ssh root@direccionIPserver
-```    
+```
 
 ![Captura de ssh1](./imagenes/CapturaSSH2.PNG)
 
-Acceder desde la máquina anfitrión a una máquina  
+Acceder desde la máquina anfitrión a una máquina
 
-```
+```bash
     ssh root@direccionIPserver
-```    
+```
 
 ![Captura de ssh2](./imagenes/CapturaSSH1.PNG)
 
-2. Acceder mediante la herramienta curl desde una máquina a la otra   
+2. Acceder mediante la herramienta curl desde una máquina a la otra
 
-```
+```bash
     curl http://direccionIPserver/hola.html
-```    
+```
 
 ![Captura de curl](./imagenes/CapturaCurl.PNG)
 
 - - -
-# Grupo
+
+## Grupo
 
 | [![Carlos Ariza García](https://github.com/AGCarlos.png?size=100)](https://github.com/AGCarlos) | [![Fernando Talavera Mendoza](https://github.com/Thejokeri.png?size=100)](https://github.com/Thejokeri) |
 | :---: | :---: |
