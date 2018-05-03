@@ -78,7 +78,7 @@ mysql> insert into datos(nombre,tlf) values ("Lenadro",95834989);
 ```
 
 Mostramos la tabla con los nuevos datos:
-![datosTabla](./imagenes/capturaBaseDeDatos.jpg)
+![datosTabla](./imagenes/Capturabasedatos1.png)
 
 **2. Realizar la copia de seguridad de la BD completa usando mysqldump en la máquina principal y copiar el archivo de copia de seguridad a la máquina secundaria.**
 
@@ -110,7 +110,7 @@ Ahora vamos a la máquina 2 para copiar el archivo .SQL con todos los datos salv
 scp maquina1:/tmp/contactos.sql /tmp/
 ```
 
-![copiaBD](./imagenes/capturaBDCopia.jpg)
+![copiaBD](./imagenes/CapturaSCP.png)
 
 **3. Restaurar dicha copia de seguridad en la segunda máquina (clonado manual de la BD), de forma que en ambas máquinas esté esa BD de forma idéntica.**
 
@@ -130,7 +130,7 @@ mysql -u root -p ejemplodb < /tmp/ejemplodb.sql
 
   Aquí observamos la base de datos de la máquina 1 en la máquina 2:
 
-![BDRestaurada](./imagenes/capturaBDRestaurada.jpg)
+![BDRestaurada](./imagenes/capturaBDRestaurada.png)
 
 **4. Realizar la configuración maestro-esclavo de los servidores MySQL para que la replicación de datos se realice automáticamente.**
 
@@ -186,7 +186,7 @@ mysql> FLUSH TABLES WITH READ LOCK;
 
 Con la siguiente orden ``mysql> SHOW MASTER STATUS;`` obtenemos los datos de la BD que necesitaremos para configurar el esclavo.
 
-![capturaMasterStatus](./imagenes/capturaMasterStatus.jpg)
+![capturaMasterStatus](./imagenes/capturaMasterStatus.png)
 
 Ahora en la máquina esclava (máquina 2), entramos en mysql y le introducimos los datos del maestro obtenidos anteriormente:
 
@@ -217,16 +217,16 @@ mysql> SHOW SLAVE STATUS\G
 
 Y comprobamos que la variable "Seconds_Behind_Master" está a 0, lo que nos indica que todo está bien:
 
-![capturaSBM](./imagenes/capturaSBM1.jpg)
-![capturaSBM](./imagenes/capturaSBM2.jpg)
+![capturaSBM](./imagenes/capturaSBM1.png)
+![capturaSBM](./imagenes/capturaSBM2.png)
 
 Vemos cómo se replica la información.
 
 Aquí se muestra la primera máquina:
-![capturaReplica](./imagenes/capturaReplica1.jpg)
+![capturaReplica](./imagenes/capturaReplica1.png)
 
 Aquí se muestra la máquina esclava:
-![capturaReplica](./imagenes/capturaReplica2.jpg)
+![capturaReplica](./imagenes/capturaReplica2.png)
 
 *Adicionalmente, y como tarea opcional para conseguir una mayor nota en esta
 práctica, se propone realizar la configuración maestro-maestro entre las dos máquinas
