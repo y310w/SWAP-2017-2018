@@ -75,7 +75,7 @@ Reiniciamos el servicio y comprobamos con curl:
 
 2. Configurar las reglas del cortafuegos con IPTABLES para asegurar el acceso a uno de los servidores web, permitiendo el acceso por los puertos de HTTP y HTTPS a dicho servidor. Esta configuración se hará en una de las máquinas servidoras finales (p.ej. en la máquina 1), y se debe poner en un script con las reglas del cortafuegos que se ejecute en el arranque del sistema (según la versión de Linux, se llevará a cabo de una forma u otra).
 
-Creamos el script para asegurar el acceso sólo por HTTP, HTTPS y SSH. 
+Creamos el script para asegurar el acceso sólo por HTTP, HTTPS y SSH.
 
 Contenido `iptablesconfig.sh`:
 
