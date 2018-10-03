@@ -136,7 +136,7 @@ Y activamos el servicio para el arranque:
   systemctl enable iptablesconfig.service
 ```
 
-Reiniciamos el sistema y como podemos comprobar se han ejecutado nuestro script
+Reiniciamos el sistema y como podemos comprobar se ha ejecutado nuestro script
 
 ![Captura de iptables](./imagenes/CapturaIptables.png)
 
